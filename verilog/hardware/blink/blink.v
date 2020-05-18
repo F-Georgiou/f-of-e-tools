@@ -6,20 +6,20 @@ module blink(led);
 	reg [31:0]	count = 0;
 
 	/*
-	 *	Creates a 48MHz clock signal from
+	 *	Creates a 10kHz clock signal from
 	 *	internal oscillator of the iCE40
 	 */
-	SB_HFOSC OSCInst0 (
-		.CLKHFPU(1'b1),
-		.CLKHFEN(1'b1),
-		.CLKHF(clk)
+	SB_LFOSC OSCInst0 (
+		.CLKLFPU(1'b1),
+		.CLKLFEN(1'b1),
+		.CLKLF(clk)
 	);
 
 	/*
 	 *	Blinks LED at approximately 1Hz
 	 */
 	always @(posedge clk) begin
-		if (count > 25000000) begin
+		if (count > 5000) begin
 			LEDstatus <= !LEDstatus;
 			count <= 0;
 		end
