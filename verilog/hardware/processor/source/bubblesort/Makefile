@@ -1,10 +1,10 @@
-TREEROOT	= ~/f-of-e-tools
+TREEROOT	= ../../../../../
 include $(TREEROOT)/tools/sunflower/conf/setup.conf
 
 TARGET-ARCH	= riscv32-elf
 TARGET		= riscv
 
-PROGRAM		= softwareblink
+PROGRAM		= template
 INIT		= init
 
 OPTFLAGS	= -g -O0
